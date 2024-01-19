@@ -26,7 +26,7 @@
         const axios = Object.values(webpack.c).find((x) => x.exports?.a?.get).exports.a;
         const firebase = Object.values(webpack.c).find(x => x.exports?.a?.initializeApp).exports.a;
         
-        const name = `Blooket${(Date.now()/10000).toFixed(0)}`;
+        const name = `Your ${Math.floor(Math.random() * (30 - 2 + 1) + 2)}nd mother. Go do the dishes!`;
         const id = props.liveGameController._liveGameCode;
         const { data: { success, fbToken, fbShardURL } } = await axios.put("https://fb.blooket.com/c/firebase/join", { id, name });
         if (success) {
